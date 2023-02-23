@@ -108,7 +108,7 @@ h3 {
 
 body {
   background-size: cover;
-  background: url("/assets/background.jpg") no-repeat center;
+  background: url("./assets/background.jpg") no-repeat center;
 }
 body header {
   display: flex;
