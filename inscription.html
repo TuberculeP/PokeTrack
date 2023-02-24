@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.cdnfonts.com/css/co-headline" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Inscription</title>
+</head>
+<body class="inscription">
+<header>
+    <div>
+        <img src="./assets/asteriatheque_icon.png" alt="icon">
+        <h1><span class="violet">Asteria</span><span class="red">thèque</span></h1>
+    </div>
+    <nav>
+        <a href="#">Livres</a>
+        <a href="#">Auteurs</a>
+        <a href="#">Genres</a>
+        <a href="#">E-Books</a>
+    </nav>
+    <div class="menu-burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</header>
+<div class="menu">
+    <nav>
+        <a href="#">Livres</a>
+        <a href="#">Auteurs</a>
+        <a href="#">Genres</a>
+        <a href="#">E-Books</a>
+    </nav>
+</div>
+<main>
+    <h1>Inscription E-Book</h1>
+    <form action="./success.html">
+        <label for="firstname">Prénom</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+
+        <label for="lastname">Nom</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Votre nom" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+
+        <label for="password-confirm">Confirmer le mot de passe</label>
+        <input type="password" id="password-confirm" name="password-confirm" placeholder="Confirmer le mot de passe" required>
+
+        <label for="birthdate">Date de naissance</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+
+        <label for="address">Adresse</label>
+        <input type="text" id="address" name="address" placeholder="Votre adresse" required>
+
+        <label for="city">Ville</label>
+        <input type="text" id="city" name="city" placeholder="Votre ville" required>
+
+        <label for="zip">Code postal</label>
+        <input type="text" id="zip" name="zip" placeholder="Votre code postal" required>
+
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+
+        <label for="newsletter">Je souhaite m'inscrire à la newsletter</label>
+        <input type="checkbox" id="newsletter" name="newsletter">
+
+        <button type="submit" >S'inscrire</button>
+    </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root{
@@ -15,12 +15,36 @@ $dark-violet: #322a39;
 $red: #b92904;
 $dark-red: #762323;
 
+.menu{
+  display: none;
+  background-color: $dark-violet;
+  padding: 20px;
+  &.open{
+    display: block;
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    a{
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      &:hover{
+        color: $beige;
+      }
+    }
+  }
+}
+
 main {
   background-color: white;
   padding: 2rem;
   color: $dark-violet;
   max-width: 1000px;
-    margin: 0 auto;
+  margin: 0 auto;
 
   h1 {
     font-size: 2rem;
@@ -44,25 +68,78 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
-    button{
+    button, a {
+      text-decoration: none;
       display: block;
+      padding: 1rem 2rem;
+      border: none;
+      background-color: $violet;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $dark-violet;
+      }
     }
   }
-  button {
-    padding: 1rem 2rem;
-    border: none;
-    background-color: $violet;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    cursor: pointer;
 
-    &:hover {
-      background-color: $dark-violet;
+}
+
+body.inscription{
+  h1{
+    text-align: center;
+    margin: 2rem;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    input{
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      background-color: #eaeaea;
+      &:focus{
+        outline: none;
+      }
+    }
+    input[type="checkbox"]{
+      display: inline;
+        width: 20px;
+        height: 20px;
+        margin: 0 1rem;
+    }
+    label{
+      font-size: 1.1rem;
+      font-weight: bold;
+      &[for="newsletter"]{
+        display: inline;
+        width: fit-content;
+      }
+    }
+    button{
+      background-color: $violet;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover{
+        background-color: $dark-violet;
+      }
     }
   }
 }
@@ -74,7 +151,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-margin: 2rem 0;
+  margin: 2rem 0;
   gap: 20px;
   .ebook {
     background-color: var(--beige);
@@ -101,7 +178,11 @@ margin: 2rem 0;
 .citation{
   display: flex;
   justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  @media screen and (max-width: 600px){
+    flex-direction: column;
+    gap: 10px;
+  }
   p{
     font-size: 1rem;
     font-style: italic;
@@ -117,9 +198,9 @@ margin: 2rem 0;
 
 h3{
   text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 
@@ -137,6 +218,15 @@ body{
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
+    .menu-burger{
+      display: none;
+      .line{
+        width: 30px;
+        height: 3px;
+        background-color: $dark-violet;
+        margin: 5px;
+      }
+    }
     div{
       display: flex;
       align-items: center;
@@ -146,7 +236,7 @@ body{
           color: $dark-violet;
         }
         span.red{
-            color: $dark-red;
+          color: $dark-red;
         }
       }
       img{
@@ -156,8 +246,8 @@ body{
       }
     }
     nav{
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
 
       a{
         text-decoration: none;
@@ -165,9 +255,38 @@ body{
         font-size: 1.5rem;
         margin: 0 1rem;
         &:hover{
-            color: $violet;
+          color: $violet;
         }
       }
     }
+    @media screen and (max-width: 600px){
+      div.menu-burger{
+        display: block;
+      }
+      nav{
+        display: none;
+      }
+    }
+  }
+}
+
+
+div.popup{
+  &.active{
+    display: block;
+  }
+  display: none;
+  position: fixed;
+  width: 40vw;
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  background-color: white;
+    padding: 3rem;
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+  button{
+    width: fit-content;
+    padding: 1rem;
+    margin: 0 auto;
   }
 }
